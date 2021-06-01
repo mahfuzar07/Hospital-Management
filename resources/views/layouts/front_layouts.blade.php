@@ -31,22 +31,51 @@
         <div class="header-top-bar">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-6">
+                    <div class="col-lg-7">
                         <ul class="top-bar-info list-inline-item pl-0 mb-0">
                             <li class="list-inline-item"><a href="mailto:support@gmail.com"><i
-                                        class="icofont-support-faq mr-2"></i>support@novena.com</a></li>
-                            <li class="list-inline-item"><i class="icofont-location-pin mr-2"></i>Address Ta-134/A, New
-                                York, USA </li>
+                                        class="icofont-email mr-2"></i>support@novena.com</a></li>
+                            <li class="list-inline-item"><i class="icofont-calendar mr-2"> Today Is:
+                                    {{ Carbon\Carbon::now()->format('l j F Y') }}</i></li>
                         </ul>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="text-lg-right top-right-bar mt-2 mt-lg-0">
-                            <a href="tel:+23-345-67890">
-                                <span>Call Now : </span>
-                                <span class="h4">823-4565-13456</span>
-                            </a>
+
+                    @guest
+                        <div class="col-lg-2">
+                            <ul class="top-bar-info list-inline-item pl-0 mb-0">
+                                <li class="list-inline-item" style="text-right"></li>
+
+                            </ul>
                         </div>
-                    </div>
+                        <div class="col-lg-3">
+                            <a class="btn btn-primary btn-sm" href="{{ route('login') }}"><i
+                                    class="icofont-user mr-2"></i> Login | Rgistration</a>
+                        </div>
+
+
+                    @else
+                        <div class="col-lg-2">
+                            <ul class="top-bar-info list-inline-item pl-0 mb-0">
+                                <li class="list-inline-item" style="text-right">WELCOME TO </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <div class="dropdown">
+                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenu2"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="icofont-user mr-2"></i> {{ Auth::user()->name }}
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <li><a class="dropdown-item" href="">Profile</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('user.logout') }}">Log-Out</a></li>
+
+                                </div>
+                            </div>
+                        </div>
+                    @endguest
+
                 </div>
             </div>
         </div>
@@ -71,7 +100,7 @@
                         <li class="nav-item"><a class="nav-link" href="">Doctor</a></li>
                         <li class="nav-item"><a class="nav-link" href="">Department</a></li>
                         <li class="nav-item"><a class="nav-link" href="">Contact</a></li>
-                        @guest
+                        {{-- @guest
 
                             <li class="nav-item"><a class="btn btn-primary btn-sm" href="{{ route('login') }}">Login</a>
                             </li>
@@ -87,7 +116,7 @@
 
                                 </ul>
                             </li>
-                        @endguest
+                        @endguest --}}
 
 
 
@@ -450,10 +479,10 @@
     <footer class="footer section gray-bg">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 mr-auto col-sm-6">
-                    <div class="widget mb-5 mb-lg-0">
+                <div class="col-lg-5 mr-auto col-sm-6">
+                    <div class="widget mb-5 mb-lg-0 ">
                         <div class="logo mb-4">
-                            <img src="images/logo.png" alt="" class="img-fluid">
+                            <img src="{{ asset('frontend') }}/images/logo.png" alt="" class="img-fluid">
                         </div>
                         <p>Tempora dolorem voluptatum nam vero assumenda voluptate, facilis ad eos obcaecati tenetur
                             veritatis eveniet distinctio possimus.</p>
@@ -469,22 +498,8 @@
                     </div>
                 </div>
 
-                <div class="col-lg-2 col-md-6 col-sm-6">
-                    <div class="widget mb-5 mb-lg-0">
-                        <h4 class="text-capitalize mb-3">Department</h4>
-                        <div class="divider mb-4"></div>
 
-                        <ul class="list-unstyled footer-menu lh-35">
-                            <li><a href="#">Surgery </a></li>
-                            <li><a href="#">Wome's Health</a></li>
-                            <li><a href="#">Radiology</a></li>
-                            <li><a href="#">Cardioc</a></li>
-                            <li><a href="#">Medicine</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-lg-2 col-md-6 col-sm-6">
+                <div class="col-lg-4 col-md-6 col-sm-6 ">
                     <div class="widget mb-5 mb-lg-0">
                         <h4 class="text-capitalize mb-3">Support</h4>
                         <div class="divider mb-4"></div>
