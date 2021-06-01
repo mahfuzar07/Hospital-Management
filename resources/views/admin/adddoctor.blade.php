@@ -9,10 +9,10 @@
                 <!-- Page-Title -->
                 <div class="row">
                     <div class="col-sm-12">
-                        <h4 class="pull-left page-title">All Doctor Table</h4>
+                        <h4 class="pull-left page-title">Add Doctor</h4>
                         <ol class="breadcrumb pull-right">
                             <li><a href="#">Admin</a></li>
-                            <li class="active">All Doctor</li>
+                            <li class="active">Doctor</li>
                         </ol>
                     </div>
                 </div>

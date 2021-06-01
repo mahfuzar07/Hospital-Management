@@ -130,8 +130,8 @@
                                 <a href="" target="_blank" class="waves-effect"><i class="md md-web"></i><span> Visit
                                         Site</span></a>
 
-                                <a href="" class=" @yield('Dashboard')" class="waves-effect"><i
-                                        class="md md-home"></i><span> Dashboard </span></a>
+                                <a href="{{ route('admin.dashboard') }}" class=" @yield('Dashboard')"
+                                    class="waves-effect"><i class="md md-home"></i><span> Dashboard </span></a>
 
                                 <a href="{{ route('admin.alluser') }}" class=" @yield('all user')"
                                     class="waves-effect"><i class="md md-group"></i><span> All Users</span></a>

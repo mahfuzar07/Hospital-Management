@@ -24,7 +24,7 @@
                         <div class="mini-stat clearfix bx-shadow">
                             <span class="mini-stat-icon bg-primary"><i class="ion-android-contacts"></i></span>
                             <div class="mini-stat-info text-right text-muted">
-                                <span class="counter">000</span>
+                                <span class="counter">{{ $users }}</span>
                                 Total Users
                             </div>
 

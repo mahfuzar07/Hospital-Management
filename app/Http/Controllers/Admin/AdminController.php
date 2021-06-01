@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Auth;
 class AdminController extends Controller
 {
     public function index(){
-        return view('admin.dashboard');
+        $users = User::where('role_id',2)->count();
+        return view('admin.dashboard',compact('users'));
     }
 
     public function Logout()
@@ -22,7 +23,6 @@ class AdminController extends Controller
     public function alluser()
     {
         $users = User::latest()->get();
-
         return view('admin.alluser',compact('users'));
     }
 }

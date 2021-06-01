@@ -1,5 +1,5 @@
 @extends('layouts.admin_layouts')
-@section('Dashboard') active @endsection
+@section('all user') active @endsection
 
 @section('admin_content')
     <div class="content-page">
@@ -9,7 +9,7 @@
                 <!-- Page-Title -->
                 <div class="row">
                     <div class="col-sm-12">
-                        <h4 class="pull-left page-title">Welcome !</h4>
+                        <h4 class="pull-left page-title">All User Table</h4>
                         <ol class="breadcrumb pull-right">
                             <li><a href="#">Admin</a></li>
                             <li class="active">All-User</li>
@@ -47,7 +47,7 @@
                                                         <td>{{ $user->name }}</td>
                                                         <td>{{ $user->email }}</td>
                                                         <td>{{ $user->role->name }}
-                                                            
+
 
                                                         </td>
 
