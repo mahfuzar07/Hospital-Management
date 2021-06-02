@@ -38,31 +38,31 @@
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label for="name">Full Name</label>
-                                            <input type="text" class="form-control" id="name">
+                                            <input type="text" class="form-control" name="name">
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="email">Email</label>
-                                            <input type="email" class="form-control" id="email">
+                                            <input type="email" class="form-control" name="email">
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label for="institute">Educational Institute</label>
-                                            <input type="text" class="form-control" id="institute">
+                                            <input type="text" class="form-control" name="institute">
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="qualification">Qualification</label>
-                                            <input type="text" class="form-control" id="qualification">
+                                            <input type="text" class="form-control" name="qualification">
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label for="employee">Employee</label>
-                                            <input type="text" class="form-control" id="employee">
+                                            <input type="text" class="form-control" name="employee">
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="specialist">Specialist</label>
-                                            <select id="specialist" class="form-control">
+                                            <select name="specialist" class="form-control">
                                                 <option selected> Choose your Department</option>
                                                 <option>...</option>
                                             </select>
@@ -72,42 +72,47 @@
                                     <div class="form-row">
                                         <div class="form-group col-md-3">
                                             <label for="phone">Contruct Number</label>
-                                            <input type="number" class="form-control" id="phone">
+                                            <input type="number" class="form-control" name="phone">
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label for="nid">NID Number</label>
-                                            <input type="number" class="form-control" id="nid">
+                                            <input type="number" class="form-control" name="nid">
                                         </div>
                                         <div class="form-group col-md-5">
                                             <label for="bmdc">BMDC Reg. No.</label>
-                                            <input type="number" class="form-control" id="bmdc">
+                                            <input type="number" class="form-control" name="bmdc">
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-8">
                                             <label for="address">Address</label>
-                                            <input type="text" class="form-control" id="address"
+                                            <input type="text" class="form-control" name="address"
                                                 placeholder="House, Road, City">
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label for="district">District</label>
-                                            <input type="text" class="form-control" id="district">
+                                            <input type="text" class="form-control" name="district">
                                         </div>
 
 
                                     </div>
                                     <div class="form-row">
-                                        <div class="form-group col-md-5">
+                                        <div class="form-group col-md-4">
                                             <label for="password">Password</label>
-                                            <input type="password" class="form-control" id="password">
+                                            <input type="password" class="form-control" name="password">
                                         </div>
-                                        <div class="form-group col-md-3">
+                                        <div class="form-group col-md-2">
                                             <label for="fees">Consultation fees</label>
-                                            <input type="text" class="form-control" id="fees">
+                                            <input type="text" class="form-control" name="fees">
                                         </div>
                                         <div class="form-group col-md-4">
-                                            <label for="avatar">Uplode Doctor Image</label>
-                                            <input type="file" class="form-control" id="avatar">
+                                            <label for="avatar">Doctor Image</label>
+                                            <input type="file" class="form-control" name="avatar">
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            <img id="image" src="#" />
+                                            <input type="file" name="avatar" accept="image/*" class="upload" required
+                                                onchange="readURL(this);">
                                         </div>
 
 
@@ -205,5 +210,9 @@
         </div>
 
     </div>
+
+    <script type="text/javascript">
+function readURL(input)
+    </script>
 
 @endsection

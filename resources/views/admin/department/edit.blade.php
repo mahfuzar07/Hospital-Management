@@ -42,7 +42,7 @@
                                     </div>
 
                                     <button type="submit"
-                                        class="btn btn-success waves-effect waves-light m-l-10">Update</button>
+                                        class="btn btn-info waves-effect waves-light m-l-10">Update</button>
                                 </form>
                             </div> <!-- panel-body -->
                         </div> <!-- panel -->

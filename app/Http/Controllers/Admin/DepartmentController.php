@@ -26,7 +26,9 @@ class DepartmentController extends Controller
             'created_at' => Carbon::now()
 
         ]);
-        return Redirect()->back();
+         return Redirect()->back()->with('');
+
+
     }
     public function edit($dep_id){
 

@@ -6,17 +6,6 @@
         <div class="content">
             <div class="container">
 
-                {{-- @if (session('update'))
-                    <div class="alert alert-success alart-dismissible fade show" role="alert">
-                        <strong>{{ session('update') }}</strong>
-
-                        <button type="button" class="close" data-dismiss="alert" aria-label="close">
-                            <span aria-hidden="true">&times</span>
-                        </button>
-                    </div>
-
-                @endif --}}
-
                 <!-- Page-Title -->
                 <div class="row">
                     <div class="col-sm-12">
@@ -68,6 +57,22 @@
                     </div>
                 </div>
                 <!--End Row  -->
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+
+                                <a class="btn btn-success waves-effect waves-light autohidebut" href="javascript:;"
+                                    onclick="$.Notification.autoHideNotify('success', 'top right', 'WOW Insert Success')">Success</a>
+                                <a class="btn btn-warning waves-effect waves-light autohidebut" href="javascript:;"
+                                    onclick="$.Notification.autoHideNotify('warning', 'top right', '')">Warning</a>
+                                <a class="btn btn-danger waves-effect waves-light autohidebut" href="javascript:;"
+                                    onclick="$.Notification.autoHideNotify('error', 'top right', '')">Error</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <!--Start 2nd Row  -->
                 <div class="row">
@@ -112,8 +117,10 @@
 
                                                             <a href="{{ url('admin/department/delete/' . $department->id) }}"
                                                                 class="btn btn-danger"
-                                                                onclick="return confirm('Are you sure to Delete This Item')"><i
-                                                                    class="fa fa-trash"></i></a>
+                                                                onclick="return confirm('Are you sure to Delete This Item')">
+                                                                <i class="fa fa-trash"></i></a>
+
+
 
                                                             @if ($department->status == 1)
                                                                 <a href="{{ url('admin/department/inactive/' . $department->id) }}"

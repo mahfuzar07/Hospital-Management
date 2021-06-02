@@ -29,7 +29,8 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
 
-
+    <!-- Plugins css -->
+    <link href="{{ asset('backend') }}/assets/notifications/notification.css" rel="stylesheet" />
 
     <!-- Waves-effect -->
     <link href="{{ asset('backend') }}/css/waves-effect.css" rel="stylesheet">
@@ -196,6 +197,11 @@
     <script src="{{ asset('backend') }}/assets/flot-chart/jquery.flot.selection.js"></script>
     <script src="{{ asset('backend') }}/assets/flot-chart/jquery.flot.stack.js"></script>
     <script src="{{ asset('backend') }}/assets/flot-chart/jquery.flot.crosshair.js"></script>
+
+    <!---notification --->
+    <script src="{{ asset('backend') }}/assets/notifications/notify.min.js"></script>
+    <script src="{{ asset('backend') }}/assets/notifications/notify-metro.js"></script>
+    <script src="{{ asset('backend') }}/assets/notifications/notifications.js"></script>
 
     <!-- Counter-up -->
     <script src="{{ asset('backend') }}/assets/counterup/waypoints.min.js" type="text/javascript"></script>
