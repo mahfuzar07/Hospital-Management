@@ -45,12 +45,12 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form action="" method="POST">
-                                    {{-- {{ route('store.department') }} --}}
+                                <form action="{{ route('store.department') }}" method="POST">
+
                                     @csrf
                                     <div class="form-group">
                                         <label class="sr-only">Department Name</label>
-                                        <input type="text" name="Department_name" class="form-control"
+                                        <input type="text" name="department_name" class="form-control"
                                             placeholder="Enter Department name">
 
                                         @error('department_name')
@@ -89,47 +89,47 @@
                                             </thead>
 
 
-                                            {{-- <tbody>
+                                            <tbody>
 
-                                                                @php
-                                                                    $i = 1;
-                                                                @endphp
-                                                                @foreach ($categories as $category)
-                                                                    <tr>
-                                                                        <td>{{ $i++ }}</td>
-                                                                        <td>{{ $category->category_name }}</td>
-                                                                        <td>
-                                                                            @if ($category->status == 1)
-                                                                                <span class="label label-success">Active</span>
-                                                                            @else
-                                                                                <span class="label label-danger">Inactive</span>
-                                                                            @endif
+                                                @php
+                                                    $i = 1;
+                                                @endphp
+                                                @foreach ($departments as $department)
+                                                    <tr>
+                                                        <td>{{ $i++ }}</td>
+                                                        <td>{{ $department->department_name }}</td>
+                                                        <td>
+                                                            @if ($department->status == 1)
+                                                                <span class="label label-success">Active</span>
+                                                            @else
+                                                                <span class="label label-danger">Inactive</span>
+                                                            @endif
 
-                                                                        </td>
-                                                                        <td>
-                                                                            <a href="{{ url('admin/categories/edit/' . $category->id) }}"
-                                                                                class="btn btn-info"><i class="fa fa-edit"></i></a>
+                                                        </td>
+                                                        <td>
+                                                            <a href="{{ url('admin/department/edit/' . $department->id) }}"
+                                                                class="btn btn-info"><i class="fa fa-edit"></i></a>
 
-                                                                            <a href="{{ url('admin/categories/delete/' . $category->id) }}"
-                                                                                class="btn btn-danger"
-                                                                                onclick="return confirm('Are you sure to Delete This Item')"><i
-                                                                                    class="fa fa-trash"></i></a>
+                                                            <a href="{{ url('admin/department/delete/' . $department->id) }}"
+                                                                class="btn btn-danger"
+                                                                onclick="return confirm('Are you sure to Delete This Item')"><i
+                                                                    class="fa fa-trash"></i></a>
 
-                                                                            @if ($category->status == 1)
-                                                                                <a href="{{ url('admin/categories/inactive/' . $category->id) }}"
-                                                                                    class="btn btn-danger"><i class="fa fa-toggle-on">
+                                                            @if ($department->status == 1)
+                                                                <a href="{{ url('admin/department/inactive/' . $department->id) }}"
+                                                                    class="btn btn-danger"><i class="fa fa-toggle-on">
 
-                                                                                    </i> </a>
-                                                                            @else
-                                                                                <a href="{{ url('admin/categories/active/' . $category->id) }}"
-                                                                                    class="btn btn-success"><i class="fa fa-toggle-off">
+                                                                    </i> </a>
+                                                            @else
+                                                                <a href="{{ url('admin/department/active/' . $department->id) }}"
+                                                                    class="btn btn-success"><i class="fa fa-toggle-off">
 
-                                                                                    </i> Active</a>
-                                                                            @endif
-                                                                        </td>
-                                                                    </tr>
-                                                                @endforeach
-                                                            </tbody> --}}
+                                                                    </i> Active</a>
+                                                            @endif
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                            </tbody>
                                         </table>
 
 
