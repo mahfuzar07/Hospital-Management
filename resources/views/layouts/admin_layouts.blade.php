@@ -136,22 +136,13 @@
                                 <a href="{{ route('admin.alluser') }}" class=" @yield('all user')"
                                     class="waves-effect"><i class="md md-group"></i><span> All Users</span></a>
 
-                                {{-- <a href="" class=" @yield('All Doctor')" class="waves-effect"><i
-                                        class="md md-group"></i><span> </span></a> --}}
+                                <a href="{{ route('add.department') }}" class=" @yield('Department')"
+                                    class="waves-effect"><i class="md md-group"></i><span> Department </span></a>
+
+                                <a href="{{ route('add.doctor') }}" class=" @yield('Department')" class="waves-effect"><i
+                                        class="md md-group"></i><span> Doctor</span></a>
 
                             </li>
-
-                            <li class="has_sub">
-                                <a href="#" class="waves-effect"><i class="md md-group"></i><span>
-                                        Doctor</span><span class="pull-right"><i class="md md-add"></i></span></a>
-                                <ul class="list-unstyled">
-                                    <li><a class=" @yield('productadd')" class="waves-effect" href="">Add Doctor</a></li>
-                                    <li><a class=" @yield('productmn')" class="waves-effect" href="">Manage Doctor</a>
-                                    </li>
-
-                                </ul>
-                            </li>
-
 
 
                         </ul>
