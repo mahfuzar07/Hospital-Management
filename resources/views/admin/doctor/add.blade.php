@@ -1,5 +1,5 @@
 @extends('layouts.admin_layouts')
-@section('Dashboard') active @endsection
+@section('Doctor') active @endsection
 
 @section('admin_content')
     <div class="content-page">
@@ -18,7 +18,7 @@
                 </div>
                 <!--Start Row  -->
                 <button type="button" class="btn btn-info  " data-toggle="modal" data-target="#exampleModal">
-                    <i class="fa fa-plus-square"></i> ADD Department
+                    <i class="fa fa-plus-square"></i> ADD Doctor
                 </button>
 
 
@@ -28,27 +28,95 @@
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Add Department</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Add Doctor Information</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form action="" method="POST">
-                                    {{-- {{ route('store.department') }} --}}
-                                    @csrf
-                                    <div class="form-group">
-                                        <label class="sr-only">Department Name</label>
-                                        <input type="text" name="Department_name" class="form-control"
-                                            placeholder="Enter Department name">
+                                <form>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="name">Full Name</label>
+                                            <input type="text" class="form-control" id="name">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="email">Email</label>
+                                            <input type="email" class="form-control" id="email">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="institute">Educational Institute</label>
+                                            <input type="text" class="form-control" id="institute">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="qualification">Qualification</label>
+                                            <input type="text" class="form-control" id="qualification">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="employee">Employee</label>
+                                            <input type="text" class="form-control" id="employee">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="specialist">Specialist</label>
+                                            <select id="specialist" class="form-control">
+                                                <option selected> Choose your Department</option>
+                                                <option>...</option>
+                                            </select>
+                                        </div>
 
-                                        @error('department_name')
-                                            <strong class="text-danger">{{ $message }}</strong>
-                                        @enderror
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-3">
+                                            <label for="phone">Contruct Number</label>
+                                            <input type="number" class="form-control" id="phone">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="nid">NID Number</label>
+                                            <input type="number" class="form-control" id="nid">
+                                        </div>
+                                        <div class="form-group col-md-5">
+                                            <label for="bmdc">BMDC Reg. No.</label>
+                                            <input type="number" class="form-control" id="bmdc">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-8">
+                                            <label for="address">Address</label>
+                                            <input type="text" class="form-control" id="address"
+                                                placeholder="House, Road, City">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="district">District</label>
+                                            <input type="text" class="form-control" id="district">
+                                        </div>
+
+
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-5">
+                                            <label for="password">Password</label>
+                                            <input type="password" class="form-control" id="password">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="fees">Consultation fees</label>
+                                            <input type="text" class="form-control" id="fees">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="avatar">Uplode Doctor Image</label>
+                                            <input type="file" class="form-control" id="avatar">
+                                        </div>
+
+
                                     </div>
 
-                                    <button type="submit" class="btn btn-info waves-effect waves-light m-l-10 pull-right">
-                                        <i class="fa fa-plus-square"></i> ADD </button>
+
+                                    <button type="submit" class="btn btn-info "><i class="fa fa-plus-square"></i> Add
+                                        Doctor </button>
+
                                 </form>
 
                             </div>
@@ -69,8 +137,11 @@
                                         <table id="datatable" class="table table-striped table-bordered">
                                             <thead>
                                                 <tr>
-                                                    <th>Serial No.</th>
-                                                    <th>Department Name</th>
+                                                    <th>No.</th>
+                                                    <th>Name</th>
+                                                    <th>Email</th>
+                                                    <th>Specialist</th>
+                                                    <th>Fees</th>
                                                     <th>Status</th>
                                                     <th>Action</th>
 

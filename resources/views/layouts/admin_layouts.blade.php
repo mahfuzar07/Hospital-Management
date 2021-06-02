@@ -70,8 +70,7 @@
                 <!-- LOGO -->
                 <div class="topbar-left">
                     <div class="text-center">
-                        <a href="" class="logo"><i class="md md-terrain"></i> <span>H.M
-                            </span></a>
+                        <a href="" class="logo"><i class="md md-terrain"></i><span>Admin Panel</span></a>
                     </div>
                 </div>
                 <!-- Button mobile view to collapse sidebar menu -->
@@ -205,6 +204,7 @@
     <!-- CUSTOM JS -->
     <script src="{{ asset('backend') }}/js/jquery.app.js"></script>
 
+
     <!-- Dashboard -->
     <script src="{{ asset('backend') }}/js/jquery.dashboard.js"></script>
 
@@ -217,12 +217,12 @@
     <script src="{{ asset('backend') }}/assets/datatables/jquery.dataTables.min.js"></script>
     <script src="{{ asset('backend') }}/assets/datatables/dataTables.bootstrap.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    {{-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
-    </script>
+    </script> --}}
 
 
 
