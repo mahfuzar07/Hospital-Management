@@ -46,7 +46,7 @@
                             <span class="mini-stat-icon bg-primary"><i class="ion-ios7-compose"></i></span>
                             <div class="mini-stat-info text-right text-muted">
                                 <span class="counter">000</span>
-                                Total Prescription
+                                Active Doctor
                             </div>
 
                         </div>

@@ -139,8 +139,9 @@
                                 <a href="{{ route('add.department') }}" class=" @yield('Department')"
                                     class="waves-effect"><i class="md md-group"></i><span> Department </span></a>
 
-                                <a href="{{ route('add.doctor') }}" class=" @yield('Department')" class="waves-effect"><i
-                                        class="md md-group"></i><span> Doctor</span></a>
+                                <a href="{{ route('add.doctor') }}" class=" @yield('Doctor')" class="waves-effect"><i
+                                        class="md md-group"></i><span>
+                                        Doctor</span></a>
 
                             </li>
 

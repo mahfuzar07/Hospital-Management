@@ -31,12 +31,12 @@
                 <button type="button" class="btn btn-info  " data-toggle="modal" data-target="#exampleModal">
                     <i class="fa fa-plus-square"></i> ADD Department
                 </button>
-                <hr>
+
 
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
-                    <div class="modal-dialog">
+                    <div class="modal-dialog ">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">Add Department</h5>
@@ -68,6 +68,7 @@
                     </div>
                 </div>
                 <!--End Row  -->
+
                 <!--Start 2nd Row  -->
                 <div class="row">
                     <div class="col-md-12">
