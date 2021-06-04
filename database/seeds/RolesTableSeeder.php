@@ -20,5 +20,6 @@ class RolesTableSeeder extends Seeder
             'id'=>'2',
             'name'=>'User'
         ]);
+
     }
 }

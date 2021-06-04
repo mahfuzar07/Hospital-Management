@@ -48,12 +48,70 @@
                             </ul>
                         </div>
                         <div class="col-lg-3">
-                            <a class="btn btn-primary btn-sm" href="{{ route('login') }}"><i
-                                    class="icofont-user mr-2"></i> Login | Rgistration</a>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                <i class="icofont-user mr-2"></i> Login | Rgistration
+                            </button>
+                        </div>
+
+
+                        <!-- Modal -->
+                        <div class="modal fade bg-secondary" id="exampleModal" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-heade bg-info">
+                                        <h5 class="modal-title text-center" style="margin-top:20px;" id="exampleModalLabel">
+                                            Enter Your Section</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+
+
+                                    <div class="modal-body">
+
+
+                                        <div class="row">
+                                            <div class="col-lg-6 ">
+                                                <div class="card" style="width: 11.5rem;">
+                                                    <img src="{{ asset('img/patient.jpg') }}" class="card-img-top"
+                                                        alt="...">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title"></h5>
+                                                        <p class="card-text"></p>
+                                                        <a href="{{ route('login') }}"><button type="button"
+                                                                class="btn btn-primary"><i class="fa fa-user"></i> Patient
+                                                            </button></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-lg-6 ">
+                                                <div class="card" style="width: 11.5rem;">
+                                                    <img src="{{ asset('img/download.jpg') }}" class="card-img-top"
+                                                        alt="...">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title"></h5>
+                                                        <p class="card-text"></p>
+
+                                                        <a href="{{ route('doctor.login') }}"><button type="button"
+                                                                class="btn btn-primary"><i class="fa fa-user"></i>
+                                                                Doctor </button></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
 
 
                     @else
+
                         <div class="col-lg-2">
                             <ul class="top-bar-info list-inline-item pl-0 mb-0">
                                 <li class="list-inline-item" style="text-right">WELCOME TO </li>
@@ -63,6 +121,9 @@
 
                         <div class="col-lg-3">
                             <div class="dropdown">
+
+
+
                                 <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenu2"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="icofont-user mr-2"></i> {{ Auth::user()->name }}
@@ -74,6 +135,7 @@
                                 </div>
                             </div>
                         </div>
+
                     @endguest
 
                 </div>

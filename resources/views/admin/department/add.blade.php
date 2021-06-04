@@ -113,7 +113,7 @@
                                                         </td>
                                                         <td>
                                                             <a href="{{ url('admin/department/edit/' . $department->id) }}"
-                                                                class="btn btn-info"><i class="fa fa-edit"></i></a>
+                                                                class="btn btn-info "><i class="fa fa-edit"></i></a>
 
                                                             <a href="{{ url('admin/department/delete/' . $department->id) }}"
                                                                 class="btn btn-danger"
@@ -124,9 +124,13 @@
 
                                                             @if ($department->status == 1)
                                                                 <a href="{{ url('admin/department/inactive/' . $department->id) }}"
-                                                                    class="btn btn-danger"><i class="fa fa-toggle-on">
+                                                                    class="btn btn-danger">
+                                                                    <i class="fa fa-toggle-on "></i>
 
-                                                                    </i> </a>
+                                                                </a>
+
+
+
                                                             @else
                                                                 <a href="{{ url('admin/department/active/' . $department->id) }}"
                                                                     class="btn btn-success"><i class="fa fa-toggle-off">

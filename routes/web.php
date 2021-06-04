@@ -12,7 +12,7 @@ Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@welcome')->name('welcome');
-
+//Admin route
 Route::group(['prefix'=>'admin','middleware'=>['admin','auth'],'namespace'=>'admin'],function(){
     Route::get('dashboard','AdminController@index')->name('admin.dashboard');
     Route::get('logout', 'AdminController@Logout')->name('admin.logout');
@@ -27,18 +27,29 @@ Route::group(['prefix'=>'admin','middleware'=>['admin','auth'],'namespace'=>'adm
     Route::get('department/active/{dep_id}', 'DepartmentController@active');
 
     Route::get('doctor', 'DoctorController@add')->name('add.doctor');
+
+    Route::post('doctor-register','DoctorController@doctorReg')->name('doctor.reg');
+
 });
+//Doctor route
+Route::get('doctor/login','Doctor\LoginController@loginFrom')->name('doctorfrom.login');
+Route::post('doctor/login','Doctor\LoginController@doctorLogin')->name('doctor.login');
+Route::get('doctor/logout','Doctor\doctorpController@Logout')->name('doctor.logout');
+Route::get('doctor/dashboard','Doctor\doctorpController@index')->name('doctor.dashboard');
+    // Route::get('logout', 'UserController@Logout')->name('user.logout');
 
 
 
 
 
 
-
+//User  route
 Route::group(['prefix'=>'user','middleware'=>['user','auth'],'namespace'=>'user'],function(){
     Route::get('dashboard','UserController@index')->name('user.dashboard');
     Route::get('logout', 'UserController@Logout')->name('user.logout');
 });
 //web page route
+
+
 
 

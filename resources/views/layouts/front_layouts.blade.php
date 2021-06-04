@@ -47,10 +47,15 @@
 
                             </ul>
                         </div>
+
                         <div class="col-lg-3">
                             <a class="btn btn-primary btn-sm" href="{{ route('login') }}"><i
                                     class="icofont-user mr-2"></i> Login | Rgistration</a>
                         </div>
+
+
+
+
 
 
                     @else
@@ -62,10 +67,11 @@
                         </div>
 
                         <div class="col-lg-3">
+                            <?php $users = \App\Model\User::where('user_id', Auth::user()->role_id == 2); ?>
                             <div class="dropdown">
                                 <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenu2"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="icofont-user mr-2"></i> {{ Auth::user()->name }}
+                                    <i class="icofont-user mr-2"></i> {{ $users->name }}
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                                     <li><a class="dropdown-item" href="">Profile</a></li>

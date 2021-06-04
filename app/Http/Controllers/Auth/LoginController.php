@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Doctor;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -34,6 +35,7 @@ class LoginController extends Controller
             }elseif (Auth()->user()->role_id == 2) {
                 return route('user.dashboard');
             }
+
     }
 
     /**
