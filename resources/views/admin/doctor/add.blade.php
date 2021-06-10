@@ -27,7 +27,7 @@
                     aria-hidden="true">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content" style="background-color: rgb(213, 220, 226)">
-                            <div class="modal-header" style="text-color:white">
+                            <div class="modal-header" style="text-color:thistle">
                                 <h3 class="modal-title" id="exampleModalLabel" style="text-align: center">Add Doctor
                                     Information</h3>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -220,8 +220,8 @@
                                                     <tr>
                                                         <td>{{ $i++ }}</td>
                                                         <td>
-                                                            <img src="{{ asset($doctor->avatar) }}" width="50px"
-                                                                height="40px" alt="">
+                                                            <img src="{{ asset('uploads/documents/doctor/' . $doctor->avatar) }}"
+                                                                width="50px" height="40px" alt="">
                                                         </td>
                                                         <td>{{ $doctor->name }}</td>
                                                         <td>{{ $doctor->email }}</td>
@@ -237,163 +237,11 @@
 
                                                         </td>
                                                         <td>
-                                                            <a href="" class="btn btn-info"><i class="fa fa-eye"></i></a>
+                                                            <a href="{{ url('admin/doctor/show/' . $doctor->id) }}"
+                                                                class="btn btn-info"><i class="fa fa-eye"></i></a>
 
-                                                            <!----Start --->
-                                                            <!-- Button trigger modal -->
-
-                                                            <button type="button" class="btn btn-info" data-toggle="modal"
-                                                                data-target="#staticBackdrop">
-                                                                <i class="fa fa-eye"></i>
-                                                            </button>
-
-                                                            <!-- Modal -->
-                                                            <div class="modal fade" id="staticBackdrop"
-                                                                data-backdrop="static" data-keyboard="false" tabindex="-1"
-                                                                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                                <div class="modal-dialog modal-lg">
-                                                                    <div class="modal-content">
-                                                                        <div class="modal-header">
-                                                                            <h3 class="modal-title"
-                                                                                id="staticBackdropLabel">Doctor Information
-                                                                            </h3>
-                                                                            <button type="button" class="close"
-                                                                                data-dismiss="modal" aria-label="Close">
-                                                                                <span aria-hidden="true">&times;</span>
-                                                                            </button>
-                                                                        </div>
-                                                                        <div class="modal-body">
-                                                                            <div class="card mb-3">
-                                                                                <div class="row no-gutters">
-                                                                                    {{-- <div class="col-md-2">
-                                                                                        <img src="{{ asset($doctor->avatar) }}"
-                                                                                            width="140px" height="140px"
-                                                                                            class="card-img" alt="..."
-                                                                                            style="border: 1px solid">
-                                                                                    </div> --}}
-                                                                                    <div class="col-md-8">
-                                                                                        <table class="table table-hover">
-                                                                                            <tbody>
-                                                                                                <tr>
-                                                                                                    <td>Name</td>
-                                                                                                    <td>{{ $doctor->name }}
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <td>Email</td>
-                                                                                                    <td>{{ $doctor->email }}
-                                                                                                    </td>
-
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <td>
-                                                                                                        Institute
-                                                                                                    </td>
-                                                                                                    <td>{{ $doctor->institute }}
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <td>Qualification</td>
-                                                                                                    <td>{{ $doctor->qualification }}
-                                                                                                    </td>
-                                                                                                </tr>
-
-                                                                                                <tr>
-                                                                                                    <td>
-                                                                                                        Specialist
-                                                                                                    </td>
-                                                                                                    <td>{{ $doctor->joindep->department_name }}
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <td>
-                                                                                                        Address
-                                                                                                    </td>
-                                                                                                    <td>{{ $doctor->address }}
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <td>
-                                                                                                        District
-                                                                                                    </td>
-                                                                                                    <td>{{ $doctor->district }}
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                            </tbody>
-                                                                                        </table>
-                                                                                    </div>
-                                                                                    <div class="col-md-4 "
-                                                                                        style="border-left:4px dotted">
-                                                                                        <div style="text-align: center">
-                                                                                            <img src="{{ asset($doctor->avatar) }}"
-                                                                                                width="140px" height="140px"
-                                                                                                class="card-img" alt="..."
-                                                                                                style="border: 2px outset">
-                                                                                        </div>
-                                                                                        <table class="table table-hover"
-                                                                                            style="margin-top: 10px">
-                                                                                            <tbody>
-                                                                                                {{-- <div
-                                                                                                    style="text-align: center">
-                                                                                                    <img src="{{ asset($doctor->avatar) }}"
-                                                                                                        width="140px"
-                                                                                                        height="140px"
-                                                                                                        class="card-img"
-                                                                                                        alt="..."
-                                                                                                        style="border: 1px solid">
-                                                                                                </div> --}}
-                                                                                                <tr>
-                                                                                                    <td>BMDC Reg</td>
-                                                                                                    <td>{{ $doctor->bmdc }}
-                                                                                                    </td>
-
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <td>Consultation Fees
-                                                                                                    </td>
-                                                                                                    <td>{{ $doctor->fees }}
-                                                                                                        Tk.
-                                                                                                    </td>
-
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <td>Date Of Birth</td>
-                                                                                                    <td>{{ $doctor->birth }}
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <td>NID No.</td>
-                                                                                                    <td>{{ $doctor->nid }}
-                                                                                                    </td>
-
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <td>
-                                                                                                        Phone
-                                                                                                    </td>
-                                                                                                    <td>
-                                                                                                        {{ $doctor->phone }}
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                            </tbody>
-                                                                                        </table>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-
-                                                                        </div>
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-
-
-
-                                                            <!---End Modal-->
-                                                            <a href="" class="btn btn-info"><i class="fa fa-edit"></i></a>
-
-                                                            <a href="" class="btn btn-danger"
+                                                            <a href="{{ url('admin/doctor/delete/' . $doctor->id) }}"
+                                                                class="btn btn-danger"
                                                                 onclick="return confirm('Are you sure to Delete This Item')"><i
                                                                     class="fa fa-trash"></i></a>
 
