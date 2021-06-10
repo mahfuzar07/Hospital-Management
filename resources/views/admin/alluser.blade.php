@@ -62,7 +62,8 @@
 
                                                         <td>
 
-                                                            <a href="" {{-- {{ url('admin/user/delete/' . $user->id) }} --}} class="btn btn-danger"
+                                                            <a href="{{ url('admin/user/delete/' . $user->id) }}"
+                                                                class="btn btn-danger"
                                                                 onclick="return confirm('Are you sure to Delete This Item')"><i
                                                                     class="fa fa-trash"></i> </a>
 
