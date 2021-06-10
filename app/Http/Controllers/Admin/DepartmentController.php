@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Department;
+use Brian2694\Toastr\Facades\Toastr;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -24,9 +25,12 @@ class DepartmentController extends Controller
         Department::insert([
             'department_name' => $request->department_name,
             'created_at' => Carbon::now()
-
         ]);
-         return Redirect()->back()->with('');
+
+        Toastr::success('Department Create Succesfull', 'success');
+
+
+        return Redirect()->back();
 
 
     }
@@ -46,6 +50,7 @@ class DepartmentController extends Controller
             'updated_at' => Carbon::now()
 
         ]);
+        Toastr::success('Department Update Succesfull');
         return Redirect()->route('add.department');
     }
 
@@ -53,6 +58,7 @@ class DepartmentController extends Controller
     {
 
         Department::find($dep_id)->delete();
+        Toastr::success('Department successfuly Deleted');
         return Redirect()->back();
     }
 
@@ -62,6 +68,7 @@ class DepartmentController extends Controller
     {
 
         Department::find($dep_id)->update(['status' => 0]);
+        Toastr::warning('Department Deactiveted','Deactive');
         return Redirect()->back();
     }
 
@@ -71,6 +78,7 @@ class DepartmentController extends Controller
     {
 
         Department::find($dep_id)->update(['status' => 1]);
+        Toastr::success('Department Activeted','Active');
         return Redirect()->back();
     }
 }
