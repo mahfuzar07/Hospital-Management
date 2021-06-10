@@ -57,22 +57,7 @@
                     </div>
                 </div>
                 <!--End Row  -->
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
 
-                                <a class="btn btn-success waves-effect waves-light autohidebut" href="javascript:;"
-                                    onclick="$.Notification.autoHideNotify('success', 'top right', 'WOW Insert Success')">Success</a>
-                                <a class="btn btn-warning waves-effect waves-light autohidebut" href="javascript:;"
-                                    onclick="$.Notification.autoHideNotify('warning', 'top right', '')">Warning</a>
-                                <a class="btn btn-danger waves-effect waves-light autohidebut" href="javascript:;"
-                                    onclick="$.Notification.autoHideNotify('error', 'top right', '')">Error</a>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 <!--Start 2nd Row  -->
                 <div class="row">
