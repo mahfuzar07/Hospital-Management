@@ -29,6 +29,7 @@
                                 <form action="{{ route('update.department') }}" method="POST">
                                     @csrf
 
+
                                     <input type="hidden" value="{{ $departments->id }}" type="text" name="id"
                                         class="form-control">
 
