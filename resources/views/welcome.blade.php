@@ -123,6 +123,7 @@
                             <div class="dropdown">
 
 
+                                {{-- $users = \App\User::where(''); --}}
 
                                 <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenu2"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -133,8 +134,10 @@
                                     <li><a class="dropdown-item" href="{{ route('user.logout') }}">Log-Out</a></li>
 
                                 </div>
+
                             </div>
                         </div>
+
 
                     @endguest
 
