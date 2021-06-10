@@ -29,14 +29,13 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
 
-    <!-- Plugins css -->
-    <link href="{{ asset('backend') }}/assets/notifications/notification.css" rel="stylesheet" />
+
 
     <!-- Waves-effect -->
     <link href="{{ asset('backend') }}/css/waves-effect.css" rel="stylesheet">
 
     <!-- sweet alerts -->
-    <link href="{{ asset('backend') }}/assets/sweet-alert/sweet-alert.min.css" rel="stylesheet">
+    {{-- <link href="{{ asset('backend') }}/assets/sweet-alert/sweet-alert.min.css" rel="stylesheet"> --}}
 
     <!-- Custom Files -->
     <link href="{{ asset('backend') }}/css/helper.css" rel="stylesheet" type="text/css" />
@@ -54,7 +53,7 @@
     <link href="{{ asset('backend') }}/assets/summernote/summernote.css" rel="stylesheet" />
 
 
-
+    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 </head>
 
 
@@ -184,9 +183,7 @@
     <script src="{{ asset('backend') }}/assets/jquery-slimscroll/jquery.slimscroll.js"></script>
     <script src="{{ asset('backend') }}/assets/jquery-blockui/jquery.blockUI.js"></script>
 
-    <!-- sweet alerts -->
-    <script src="{{ asset('backend') }}/assets/sweet-alert/sweet-alert.min.js"></script>
-    <script src="{{ asset('backend') }}/assets/sweet-alert/sweet-alert.init.js"></script>
+
 
     <!-- flot Chart -->
     <script src="{{ asset('backend') }}/assets/flot-chart/jquery.flot.js"></script>
@@ -198,10 +195,9 @@
     <script src="{{ asset('backend') }}/assets/flot-chart/jquery.flot.stack.js"></script>
     <script src="{{ asset('backend') }}/assets/flot-chart/jquery.flot.crosshair.js"></script>
 
-    <!---notification --->
-    <script src="{{ asset('backend') }}/assets/notifications/notify.min.js"></script>
-    <script src="{{ asset('backend') }}/assets/notifications/notify-metro.js"></script>
-    <script src="{{ asset('backend') }}/assets/notifications/notifications.js"></script>
+    <!--Toster-->
+
+
 
     <!-- Counter-up -->
     <script src="{{ asset('backend') }}/assets/counterup/waypoints.min.js" type="text/javascript"></script>
@@ -214,27 +210,33 @@
     <!-- Dashboard -->
     <script src="{{ asset('backend') }}/js/jquery.dashboard.js"></script>
 
-    <!-- Chat -->
-    <script src="{{ asset('backend') }}/js/jquery.chat.js"></script>
 
-    <!-- Todo -->
-    <script src="{{ asset('backend') }}/js/jquery.todo.js"></script>
 
     <script src="{{ asset('backend') }}/assets/datatables/jquery.dataTables.min.js"></script>
     <script src="{{ asset('backend') }}/assets/datatables/dataTables.bootstrap.js"></script>
 
-    {{-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
-    </script> --}}
+
 
 
 
 
 
     <script src="{{ asset('backend') }}/assets/summernote/summernote.min.js"></script>
+    <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+    {!! Toastr::message() !!}
+    <script>
+        @if ($errors->any())
+
+            @foreach ($errors->all() as $error)
+                toastr.error('{{ $error }}','Error',{
+                closeButton:false,
+                progressBar:true,
+                });
+            @endforeach
+        @endif
+
+    </script>
+
 
     <script type="text/javascript">
         /* ==============================================
@@ -272,6 +274,23 @@
             });
 
         });
+
+    </script>
+
+    <script type="text/javascript">
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#image')
+                        .attr('src', e.target.result)
+                        .width(120)
+                        .height(120);
+
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
 
     </script>
 
