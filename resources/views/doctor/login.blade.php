@@ -62,8 +62,8 @@
         <div class="panel panel-color panel-primary panel-pages">
             <div class="panel-heading bg-img">
                 <div class="bg-overlay"></div>
-                <h2 class="text-center m-t-10 text-white"> Aim 2Be Well </h2>
-                <h3 class="text-center m-t-10 text-white"> Sign In to <strong>Consultant</strong> </h3>
+                <h2 class="text-center m-t-10 text-white"> Hospital management </h2>
+                <h3 class="text-center m-t-10 text-white"> Sign In to <strong>Doctor</strong> </h3>
             </div>
 
 
