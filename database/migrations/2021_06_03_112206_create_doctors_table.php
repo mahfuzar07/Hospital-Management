@@ -29,7 +29,7 @@ class CreateDoctorsTable extends Migration
             $table->string('address');
             $table->string('district');
             $table->string('password');
-            $table->text('avatar');
+            $table->text('avatar')->nullable();
 
             $table->integer('status')->default(1);
             $table->timestamps();
