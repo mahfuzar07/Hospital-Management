@@ -23,10 +23,11 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light  shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                <a class="navbar-brand" href="{{ route('welcome') }}">
+                     <h4>{{ config('app.name', 'Laravel') }}</h4><h5> .com.bd</h5>
+
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -44,13 +45,15 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <li class="nav-item" style="margin-right: 30px">
+                                <a class="btn btn-primary" class="nav-link" href="{{ route('login') }}"> {{ __('Login') }}</a>
                             </li>
+
                             @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
+                                    <li class="nav-item">
+                                        <a class="btn btn-primary" class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    </li>
+
                             @endif
                         @else
                             <li class="nav-item dropdown">
