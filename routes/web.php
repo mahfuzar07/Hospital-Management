@@ -55,6 +55,11 @@ Route::group(['prefix'=>'user','middleware'=>['user','auth'],'namespace'=>'user'
     Route::get('logout', 'UserController@Logout')->name('user.logout');
 });
 //web page route
+Route::get('appoinment-page', 'HomeController@ap')->name('appoinment');
+Route::get('all-Doctor', 'HomeController@doctorlist')->name('doctorlist');
+Route::get('service', 'HomeController@service')->name('service');
+Route::get('contact', 'HomeController@contact')->name('contact');
+
 
 
 
