@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Doctor;
 
-use Validator;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Auth;
-use Session;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -38,7 +38,7 @@ class LoginController extends Controller
         } else {
             $responsedata = array(
                 'email'     => $request->email,
-                'password'  => $request->password
+                'password'  => $request->password,
             );
 
             if (Auth::guard('doctor')->attempt($responsedata)) {
