@@ -30,7 +30,7 @@
         </div>
     </div>
 </section>
-<section class="features">
+    <section class="features">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
