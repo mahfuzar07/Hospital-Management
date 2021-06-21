@@ -130,3 +130,4 @@ class DoctorController extends Controller
         return Redirect()->back();
     }
 }
+
